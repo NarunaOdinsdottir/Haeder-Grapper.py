@@ -33,7 +33,7 @@ highlight_headers = [
 
 def format_line(key, value, highlight=False):
     if highlight:
-        return f"⚡ {key}: {value} ⚡"
+        return f"{key}: {value} "
     return f"{key}: {value}"
 
 def run_scan(url, save_report=False):
@@ -58,7 +58,7 @@ def run_scan(url, save_report=False):
             print(format_line(key, value))
 
     # Security-Report
-    print("\n📝 Vault-Sicherheitsreport:")
+    print("\n Vault-Sicherheitsreport:")
     print(f"Gefundene Sicherheitsheader: {found_security_headers} / {len(highlight_headers)}")
     if found_security_headers == len(highlight_headers):
         print("✅ Vault gut gesichert! Keine offensichtlichen Header-Lücken.")
